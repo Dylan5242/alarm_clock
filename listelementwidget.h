@@ -11,10 +11,13 @@ public:
     explicit ListElementWidget(const QString &day, const QString &time, QWidget *parent = nullptr);
     QSize sizeHint() const override;
 
-    // Добавляем методы доступа
+    // Методы доступа
     QString day() const;
     QString time() const;
     bool isChecked() const;
+
+    // Метод установки состояния переключателя
+    void setChecked(bool checked);
 
 private:
     QLabel *dayLabel;

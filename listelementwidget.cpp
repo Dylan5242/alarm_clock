@@ -46,3 +46,8 @@ bool ListElementWidget::isChecked() const {
 QSize ListElementWidget::sizeHint() const {
     return QSize(340, 50);
 }
+
+void ListElementWidget::setChecked(bool checked) {
+    toggle->setChecked(checked);
+}
+
