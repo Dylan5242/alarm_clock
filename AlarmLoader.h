@@ -1,0 +1,4 @@
+#ifndef ALARMLOADER_H
+#define ALARMLOADER_H
+
+#endif // ALARMLOADER_H

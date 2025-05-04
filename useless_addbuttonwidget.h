@@ -1,5 +1,6 @@
-#ifndef ADDBUTTONWIDGET_H
-#define ADDBUTTONWIDGET_H
+/*
+#ifndef USELESS_ADDBUTTONWIDGET_H
+#define USELESS_ADDBUTTONWIDGET_H
 
 #include <QWidget>
 #include <QPushButton>
@@ -19,4 +20,5 @@ private:
     QPushButton *button;
 };
 
-#endif // ADDBUTTONWIDGET_H
+#endif // USELESS_ADDBUTTONWIDGET_H
+*/

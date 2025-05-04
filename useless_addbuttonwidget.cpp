@@ -1,4 +1,4 @@
-#include "addbuttonwidget.h"
+/*#include "addbuttonwidget.h"
 #include <QVBoxLayout>
 
 AddButtonWidget::AddButtonWidget(QWidget *parent)
@@ -20,3 +20,4 @@ void AddButtonWidget::onButtonClicked()
 {
     emit addRequested(); // Сигнал добавления элемента
 }
+*/

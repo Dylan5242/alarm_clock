@@ -32,3 +32,16 @@ QListWidget* ListEditor::listWidget() const
 {
     return listWidget_;
 }
+
+QList<ListElementWidget*> ListEditor::get_all_list_elements() const {
+    QList<ListElementWidget*> elements;
+    for (int i = 0; i < listWidget_->count(); ++i) {
+        QListWidgetItem *item = listWidget_->item(i);
+        ListElementWidget *widget = qobject_cast<ListElementWidget*>(listWidget_->itemWidget(item));
+        if (widget) {
+            elements.append(widget);
+        }
+    }
+    return elements;
+}
+

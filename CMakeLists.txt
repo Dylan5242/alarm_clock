@@ -29,9 +29,13 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         toggleswitch.cpp
         listeditor.cpp
         listeditor.h
-        addbuttonwidget.h
-        addbuttonwidget.cpp
+        useless_addbuttonwidget.h
+        useless_addbuttonwidget.cpp
         mainwindow.cpp
+        AlarmSaver.h
+        AlarmSaver.cpp
+        AlarmLoader.h
+        AlarmLoader.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET backup APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
