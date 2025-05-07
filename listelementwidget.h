@@ -8,7 +8,8 @@
 class ListElementWidget : public QWidget {
     Q_OBJECT
 public:
-    explicit ListElementWidget(const QString &day, const QString &time, QWidget *parent = nullptr);
+    ListElementWidget(const QString &day, const QString &time, int week, QWidget *parent = nullptr);
+
     QSize sizeHint() const override;
 
     // Методы доступа
@@ -18,11 +19,16 @@ public:
 
     // Метод установки состояния переключателя
     void setChecked(bool checked);
+    void setSelected(bool selected);
+    bool isSelected() const { return is_selected_; }
 
 private:
     QLabel *dayLabel;
     QLabel *timeLabel;
+    QLabel *weekLabel;
     ToggleSwitch *toggle;
+    QLabel* display_label;
+    bool is_selected_ = false;
 };
 
 #endif // LISTELEMENTWIDGET_H

@@ -19,14 +19,14 @@ ListEditor::ListEditor(QWidget *parent)
     setLayout(layout);
 }
 
-void ListEditor::addItem()
-{
-    QListWidgetItem *item = new QListWidgetItem(listWidget_);
-    ListElementWidget *widget = new ListElementWidget("Новый день", "00:00", listWidget_);
-    item->setSizeHint(widget->sizeHint());
-    listWidget_->addItem(item);
-    listWidget_->setItemWidget(item, widget);
-}
+//void ListEditor::addItem()
+//{
+//    QListWidgetItem *item = new QListWidgetItem(listWidget_);
+//    ListElementWidget *widget = new ListElementWidget("Новый день", "00:00", 4, listWidget_);
+//    item->setSizeHint(widget->sizeHint());
+//    listWidget_->addItem(item);
+//    listWidget_->setItemWidget(item, widget);
+//}
 
 QListWidget* ListEditor::listWidget() const
 {

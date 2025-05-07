@@ -1,20 +1,22 @@
+// alarmloader.h
+
 #ifndef ALARMLOADER_H
 #define ALARMLOADER_H
 
 #include <QString>
 #include <QList>
 
-struct AlarmInfo {
+struct Alarm {
     QString day;
     QString time;
+    int week;
     bool enabled;
 };
 
 class AlarmLoader {
 public:
-    /// Загружает список будильников из файла filename (по умолчанию "alarms.json").
-    /// Возвращает пустой список, если файл не удалось открыть или разобрать.
-    static QList<AlarmInfo> load(const QString &filename = "alarms.json");
+    static QList<Alarm> load(const QString &filename = "alarms.json");
+    static void save(const QList<Alarm> &alarms, const QString &filename = "alarms.json");
 };
 
 #endif // ALARMLOADER_H

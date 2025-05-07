@@ -1,3 +1,5 @@
+// alarmloader.cpp
+
 #include "alarmloader.h"
 #include <QFile>
 #include <QJsonDocument>
@@ -5,9 +7,9 @@
 #include <QJsonArray>
 #include <QDebug>
 
-QList<AlarmInfo> AlarmLoader::load(const QString &filename)
+QList<Alarm> AlarmLoader::load(const QString &filename)
 {
-    QList<AlarmInfo> result;
+    QList<Alarm> result;
     QFile file(filename);
     if (!file.open(QIODevice::ReadOnly)) {
         qWarning() << "AlarmLoader: cannot open file" << filename;
@@ -35,9 +37,10 @@ QList<AlarmInfo> AlarmLoader::load(const QString &filename)
         if (!val.isObject()) continue;
         QJsonObject obj = val.toObject();
 
-        AlarmInfo info;
+        Alarm info;
         info.day     = obj.value("day").toString();
         info.time    = obj.value("time").toString();
+        info.week    = obj.value("week").toInt();  // <-- добавлено
         info.enabled = obj.value("active").toBool();
 
         result.append(info);

@@ -13,6 +13,7 @@ public:
     QListWidget* listWidget() const;
     QList<ListElementWidget*> get_all_list_elements() const;
 
+
 private:
     QListWidget *listWidget_;
 

@@ -1,34 +1,52 @@
 #include "listelementwidget.h"
 #include <QHBoxLayout>
-#include <QDebug>  // Добавляем для qDebug()
+#include <QDebug>
 
-ListElementWidget::ListElementWidget(const QString &day, const QString &time, QWidget *parent)
+ListElementWidget::ListElementWidget(const QString &day, const QString &time, int week, QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *layout = new QHBoxLayout(this);
+    auto *main_layout = new QVBoxLayout(this); // Главный вертикальный layout
 
-    dayLabel = new QLabel(day, this);
+    // Верхняя строка: время, неделя и переключатель
+    auto *top_layout = new QHBoxLayout();
+
     timeLabel = new QLabel(time, this);
+    weekLabel = new QLabel(QString("неделя %1").arg(week), this);
     toggle = new ToggleSwitch(this);
 
-    dayLabel->setFixedSize(150, 40);
-    timeLabel->setFixedSize(100, 40);
-    toggle->setFixedSize(100, 40);
+    timeLabel->setStyleSheet("font-size: 16px; color: black;");
+    weekLabel->setStyleSheet("font-size: 16px; color: black;");
 
-    dayLabel->setStyleSheet("font-size: 16px;");
-    timeLabel->setStyleSheet("font-size: 16px;");
+    timeLabel->setFixedWidth(70);
+    weekLabel->setFixedWidth(100);
+    toggle->setFixedSize(80, 30);
 
-    layout->addWidget(dayLabel);
-    layout->addWidget(timeLabel);
-    layout->addWidget(toggle);
-    layout->setContentsMargins(10, 10, 10, 10);
+    top_layout->addWidget(timeLabel);
+    top_layout->addWidget(weekLabel);
+    top_layout->addStretch();
+    top_layout->addWidget(toggle);
 
-    // Добавляем соединение сигналов здесь - после создания всех виджетов
+    // Нижняя строка: дни недели
+    dayLabel = new QLabel(day, this);
+    dayLabel->setStyleSheet("font-size: 14px; color: black;");
+    dayLabel->setAlignment(Qt::AlignLeft);
+
+    // Сборка слоёв
+    main_layout->addLayout(top_layout);
+    main_layout->addWidget(dayLabel);
+    main_layout->setContentsMargins(10, 10, 10, 10);
+
     connect(toggle, &ToggleSwitch::toggled, [this](bool checked) {
         qDebug() << "Toggle state changed for" << dayLabel->text()
         << timeLabel->text() << ":" << checked;
-        // Здесь можно добавить сохранение состояния
     });
+}
+
+
+void ListElementWidget::setSelected(bool selected)
+{
+    is_selected_ = selected;
+    setStyleSheet(selected ? "background-color: lightgray;" : "");
 }
 
 QString ListElementWidget::day() const {
@@ -44,7 +62,7 @@ bool ListElementWidget::isChecked() const {
 }
 
 QSize ListElementWidget::sizeHint() const {
-    return QSize(340, 50);
+    return QSize(200, 70);  // увеличил ширину
 }
 
 void ListElementWidget::setChecked(bool checked) {

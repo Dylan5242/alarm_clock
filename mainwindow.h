@@ -22,6 +22,17 @@ protected:
 private slots:
     void on_pushButton_plus_clicked();
 
+    void on_pushButton_remove_all_clicked();
+
+    void on_pushButton_select_all_clicked();
+
+    void on_pushButton_delete_clicked();
+
+    void on_pushButton_sort_list_elements_clicked();
+
+    void on_listWidget_itemClicked(QListWidgetItem *item);
+
+
 private:
     void addAlarmItem(const QString &day, const QString &time, bool enabled); // Добавляем объявление
     Ui::MainWindow *ui;
