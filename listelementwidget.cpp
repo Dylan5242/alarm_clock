@@ -1,9 +1,12 @@
 #include "listelementwidget.h"
+#include "dataeditor.h"
+
 #include <QHBoxLayout>
+#include <QVBoxLayout>  // Не забываем!
 #include <QDebug>
 
 ListElementWidget::ListElementWidget(const QString &day, const QString &time, int week, QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent), week_(week)  // Инициализируем поле недели
 {
     auto *main_layout = new QVBoxLayout(this); // Главный вертикальный layout
 
@@ -42,7 +45,6 @@ ListElementWidget::ListElementWidget(const QString &day, const QString &time, in
     });
 }
 
-
 void ListElementWidget::setSelected(bool selected)
 {
     is_selected_ = selected;
@@ -69,3 +71,19 @@ void ListElementWidget::setChecked(bool checked) {
     toggle->setChecked(checked);
 }
 
+int ListElementWidget::week() const {
+    return week_;
+}
+
+void ListElementWidget::setDay(const QString &day) {
+    dayLabel->setText(day);
+}
+
+void ListElementWidget::setTime(const QString &time) {
+    timeLabel->setText(time);
+}
+
+void ListElementWidget::setWeek(int week) {
+    week_ = week;
+    weekLabel->setText(QString("неделя %1").arg(week));
+}

@@ -26,7 +26,7 @@
       <x>10</x>
       <y>40</y>
       <width>401</width>
-      <height>585</height>
+      <height>622</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -132,6 +132,13 @@
         <widget class="QPushButton" name="pushButton_remove_all">
          <property name="text">
           <string>снять выбор</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_apply">
+         <property name="text">
+          <string>PushButton</string>
          </property>
         </widget>
        </item>

@@ -22,6 +22,11 @@ public:
     void setSelected(bool selected);
     bool isSelected() const { return is_selected_; }
 
+    int week() const;
+    void setDay(const QString &day);
+    void setTime(const QString &time);
+    void setWeek(int week);
+
 private:
     QLabel *dayLabel;
     QLabel *timeLabel;
@@ -29,6 +34,8 @@ private:
     ToggleSwitch *toggle;
     QLabel* display_label;
     bool is_selected_ = false;
+    int week_;
+
 };
 
 #endif // LISTELEMENTWIDGET_H

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QListWidget>
+#include "listelementwidget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -33,9 +34,12 @@ private slots:
     void on_listWidget_itemClicked(QListWidgetItem *item);
 
 
+    void on_pushButton_apply_clicked();
+
 private:
     void addAlarmItem(const QString &day, const QString &time, bool enabled); // Добавляем объявление
     Ui::MainWindow *ui;
+    ListElementWidget* current_element_ = nullptr;
 };
 
 #endif // MAINWINDOW_H

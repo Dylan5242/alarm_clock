@@ -45,3 +45,5 @@ QList<ListElementWidget*> ListEditor::get_all_list_elements() const {
     return elements;
 }
 
+
+
