@@ -5,13 +5,16 @@
 #include <QJsonDocument>
 #include <QDebug>
 
-bool AlarmSaver::save_to_file(const QString &filename, const QList<ListElementWidget*> &elements) {
+bool AlarmSaver::save_to_file(const QString &filename,
+                              const QList<ListElementWidget*> &elements)
+{
     QJsonArray alarm_array;
 
-    for (const auto &elem : elements) {
+    for (const auto *elem : elements) {
         QJsonObject alarm_obj;
-        alarm_obj["day"] = elem->day();
-        alarm_obj["time"] = elem->time();
+        alarm_obj["day"]    = elem->day();
+        alarm_obj["time"]   = elem->time();
+        alarm_obj["week"]   = elem->week();      // <-- сохраним номер недели
         alarm_obj["active"] = elem->isChecked();
         alarm_array.append(alarm_obj);
     }
