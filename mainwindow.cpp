@@ -3,11 +3,17 @@
 #include "listelementwidget.h"
 #include "alarmloader.h"
 #include "alarmsaver.h"
+#include "wake_up_massange.h"
+#include "alarmloader.h"
+
+
 
 #include <QListWidgetItem>
 #include <QCloseEvent>
 #include <QTime>
 #include <QMap>
+#include <QDate>
+#include <QTimer>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -27,6 +33,49 @@ MainWindow::MainWindow(QWidget *parent)
             this, &MainWindow::on_listWidget_itemClicked);
     connect(ui->pushButton_apply, &QPushButton::clicked,
             this, &MainWindow::on_pushButton_apply_clicked);
+
+    ui->label_week_now->setText(QString("неделя: %1").arg(current_week));
+
+
+    // 3) Запускаем таймер для проверки времени каждую минуту
+    QTimer *timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &MainWindow::checkAndTriggerAlarms);
+    timer->start(60000); // 60 секунд = 1 минута
+
+}
+
+void MainWindow::checkAndTriggerAlarms()
+{
+    const QList<Alarm> alarms = AlarmLoader::load();
+    const QTime now = QTime::currentTime();
+    const QDate today = QDate::currentDate();
+    const int week = current_week;
+
+    QString day_str = QLocale(QLocale::Russian).dayName(today.dayOfWeek(), QLocale::ShortFormat); // "пн", "вт" и т.д.
+
+    for (const Alarm &alarm : alarms) {
+        if (!alarm.enabled)
+            continue;
+
+        if (!alarm.day.contains(day_str))
+            continue;
+
+        if (alarm.week != week)
+            continue;
+
+        QTime alarm_time = QTime::fromString(alarm.time, "HH:mm");
+
+        if (!alarm_time.isValid())
+            continue;
+
+        // если сейчас точно совпадает с временем будильника
+        if (now.hour() == alarm_time.hour() && now.minute() == alarm_time.minute()) {
+            WakeUpMassange *message = new WakeUpMassange();
+            message->setAttribute(Qt::WA_DeleteOnClose);
+            message->show();
+            return;
+        }
+    }
 }
 
 MainWindow::~MainWindow()

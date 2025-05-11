@@ -1,18 +1,14 @@
-#ifndef WAKE_UP_MASSANGE_H
-#define WAKE_UP_MASSANGE_H
+#ifndef WAKEUPMASSANGE_H
+#define WAKEUPMASSANGE_H
 
 #include <QDialog>
-#include <QPushButton>
 #include <QLabel>
-#include <QVBoxLayout>
-//для звука
+#include <QPushButton>
 #include <QMediaPlayer>
 #include <QAudioOutput>
-#include <QCoreApplication>
 
-
-
-class WakeUpMassange : public QDialog {
+class WakeUpMassange : public QDialog
+{
     Q_OBJECT
 
 public:
@@ -31,4 +27,4 @@ private:
     QAudioOutput *audioOutput;
 };
 
-#endif // WAKE_UP_MASSANGE_H
+#endif // WAKEUPMASSANGE_H

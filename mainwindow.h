@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QTime>
 #include <QMainWindow>
 #include <QListWidget>
 #include "listelementwidget.h"
@@ -32,6 +33,8 @@ private slots:
 private:
     // helper to add alarm items into the list
     void addAlarmItem(const QString &day, const QString &time, int week, bool enabled);
+    void checkAndTriggerAlarms();
+
 
     Ui::MainWindow *ui;
     ListElementWidget *current_element_ = nullptr;

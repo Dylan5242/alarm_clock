@@ -1,5 +1,3 @@
-// alarmloader.h
-
 #ifndef ALARMLOADER_H
 #define ALARMLOADER_H
 
@@ -12,6 +10,9 @@ struct Alarm {
     int week;
     bool enabled;
 };
+
+// Глобальная переменная — номер текущей недели
+extern int current_week;
 
 class AlarmLoader {
 public:
