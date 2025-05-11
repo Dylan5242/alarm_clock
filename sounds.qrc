@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/sounds"/>
+    <qresource prefix="/system_sounds">
+        <file>I_drive.mp3</file>
+    </qresource>
+    <qresource prefix="/icons"/>
+    <qresource prefix="/pictures">
+        <file>driver.jpg</file>
+    </qresource>
+</RCC>

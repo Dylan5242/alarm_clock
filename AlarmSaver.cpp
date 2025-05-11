@@ -14,12 +14,13 @@ bool AlarmSaver::save_to_file(const QString &filename,
         QJsonObject alarm_obj;
         alarm_obj["day"]    = elem->day();
         alarm_obj["time"]   = elem->time();
-        alarm_obj["week"]   = elem->week();      // <-- сохраним номер недели
+        alarm_obj["week"]   = elem->week();
         alarm_obj["active"] = elem->isChecked();
         alarm_array.append(alarm_obj);
     }
 
     QJsonObject root;
+    root["alarm_trigger"] = false;  // Сброс по умолчанию
     root["alarms"] = alarm_array;
 
     QJsonDocument doc(root);
