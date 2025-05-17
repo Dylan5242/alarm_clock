@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>419</width>
-    <height>623</height>
+    <width>378</width>
+    <height>747</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,12 +26,18 @@
       <x>10</x>
       <y>40</y>
       <width>401</width>
-      <height>622</height>
+      <height>714</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QListWidget" name="listWidget">
+       <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>700</height>
+        </size>
+       </property>
        <property name="styleSheet">
         <string notr="true">
             QListWidget {
@@ -47,6 +53,12 @@
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
         <widget class="QLabel" name="label_week_now">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="text">
           <string>неделя:</string>
          </property>
@@ -54,6 +66,12 @@
        </item>
        <item>
         <widget class="QPushButton" name="pushButton_plus">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="styleSheet">
           <string notr="true">
             font-size: 24px;
@@ -67,13 +85,33 @@
         </widget>
        </item>
        <item>
-        <widget class="QTimeEdit" name="timeEdit"/>
+        <widget class="QTimeEdit" name="timeEdit">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
        </item>
        <item>
-        <widget class="QSpinBox" name="spinBox_number_week"/>
+        <widget class="QSpinBox" name="spinBox_number_week">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QCheckBox" name="checkBox_monday">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="text">
           <string>пн</string>
          </property>
@@ -81,6 +119,12 @@
        </item>
        <item>
         <widget class="QCheckBox" name="checkBox_thuesday">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="text">
           <string>вт</string>
          </property>
@@ -88,6 +132,12 @@
        </item>
        <item>
         <widget class="QCheckBox" name="checkBox_wednesday">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="text">
           <string>ср</string>
          </property>
@@ -95,6 +145,12 @@
        </item>
        <item>
         <widget class="QCheckBox" name="checkBox_thursday">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="text">
           <string>чт</string>
          </property>
@@ -102,6 +158,12 @@
        </item>
        <item>
         <widget class="QCheckBox" name="checkBox_friday">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="text">
           <string>пт</string>
          </property>
@@ -109,6 +171,12 @@
        </item>
        <item>
         <widget class="QCheckBox" name="checkBox_saturday">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="text">
           <string>сб</string>
          </property>
@@ -116,6 +184,12 @@
        </item>
        <item>
         <widget class="QCheckBox" name="checkBox_sunday">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="text">
           <string>вс</string>
          </property>
@@ -123,6 +197,12 @@
        </item>
        <item>
         <widget class="QPushButton" name="pushButton_select_all">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="text">
           <string>выбрать все</string>
          </property>
@@ -130,6 +210,12 @@
        </item>
        <item>
         <widget class="QPushButton" name="pushButton_remove_all">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="text">
           <string>снять выбор</string>
          </property>
@@ -137,6 +223,12 @@
        </item>
        <item>
         <widget class="QPushButton" name="pushButton_apply">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="text">
           <string>подтвердить</string>
          </property>
@@ -144,6 +236,12 @@
        </item>
        <item>
         <widget class="QPushButton" name="pushButton_delete">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="text">
           <string>Удалить</string>
          </property>
@@ -151,6 +249,12 @@
        </item>
        <item>
         <widget class="QPushButton" name="pushButton_sort_list_elements">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="text">
           <string>сортировать</string>
          </property>
@@ -163,7 +267,7 @@
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>20</width>
+           <width>10</width>
            <height>40</height>
           </size>
          </property>
@@ -179,7 +283,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>419</width>
+     <width>378</width>
      <height>26</height>
     </rect>
    </property>

@@ -19,7 +19,7 @@ WakeUpMassange::WakeUpMassange(QWidget *parent)
 
     // Слой с фоном (без влияния на кнопки)
     QLabel *backgroundLabel = new QLabel(this);
-    backgroundLabel->setPixmap(QPixmap(":/pictures/driver.jpg").scaled(size(), Qt::KeepAspectRatioByExpanding));
+    //backgroundLabel->setPixmap(QPixmap(":/pictures/driver.jpg").scaled(size(), Qt::KeepAspectRatioByExpanding));
     backgroundLabel->setGeometry(0, 0, width(), height());
     backgroundLabel->lower(); // на задний план
 

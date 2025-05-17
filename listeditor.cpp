@@ -11,7 +11,7 @@ ListEditor::ListEditor(QWidget *parent)
                                "border: 1px solid #ccc;"
                                "font-size: 16px;"
                                "}");
-    listWidget_->setFixedSize(350, 600); // Фиксированный размер списка
+    listWidget_->setFixedSize(200, 500); // Фиксированный размер списка
 
     QVBoxLayout *layout = new QVBoxLayout(this);
     layout->addWidget(listWidget_);
